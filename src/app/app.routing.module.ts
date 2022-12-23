@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 import { PaginaComParametrosComponent } from './pagina-com-parametros/pagina-com-parametros.component';
+import { PaginaProtegidaComponent } from './pagina-protegida/pagina-protegida.component';
 import { PagninaNaoEncontradaComponent } from './pagnina-nao-encontrada/pagnina-nao-encontrada.component';
 import { PrimeiraPaginaComponent } from './primeira-pagina/primeira-pagina.component';
 import { SegundaPaginaComponent } from './segunda-pagina/segunda-pagina.component';
@@ -22,6 +24,12 @@ const routes: Routes = [
         (m) => m.LazyLoadingModule
       ),
   },
+  {
+    path: 'pagina-protegida',
+    component: PaginaProtegidaComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: PagninaNaoEncontradaComponent },
 ];
 CommonModule;

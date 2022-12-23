@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SegundaPaginaComponent } from './segunda-pagina.component';
+import { SegundaPaginaComponent } from 'src/app/segunda-pagina/segunda-pagina.component';
 
 describe('SegundaPaginaComponent', () => {
   let component: SegundaPaginaComponent;
